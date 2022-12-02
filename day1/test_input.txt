@@ -1,0 +1,1 @@
+np.max(np.array(total_cals)))
