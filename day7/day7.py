@@ -5,6 +5,7 @@ import time
 with open('input.txt') as f:
     data = f.read().splitlines()
 
+
 tree = {'/': {'size': 0, 'parent': None}}
 path = []
 
@@ -16,7 +17,7 @@ def bottom_to_top(path: str, size: int):
     tree[path]['size'] += size
     bottom_to_top(tree[path]['parent'], size)
 
-
+t = time.time()
 for c in data:
 
     # moving directory
@@ -54,7 +55,7 @@ for k, v in tree.items():
 
 
 print('Part 1', total_size)
-
+print(time.time()-t)
 required_space = 30000000
 disk_space = 70000000
 unused_space = disk_space - tree['/']['size']
